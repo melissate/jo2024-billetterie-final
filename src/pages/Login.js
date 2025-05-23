@@ -59,7 +59,7 @@ const Login = () => {
       } else {
         // Tu peux choisir de rediriger vers le tableau de bord client par défaut
         // Ou vers la page des offres
-        navigate('/dashboard'); // Redirige les utilisateurs normaux vers leur tableau de bord par défaut
+        navigate('/clientDashboard'); // Redirige les utilisateurs normaux vers leur tableau de bord par défaut
       }
     } catch (err) {
       console.error("Login error:", err.response ? err.response.data : err.message);
