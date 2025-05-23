@@ -16,7 +16,9 @@ const Offers = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch('${API}/api/offers')
+    // AVANT: fetch('${API}/api/offers')
+    // APRÈS:
+    fetch(`${API}/api/offers`) // <-- Changer les ' en `
       .then(res => {
         if (!res.ok) {
           throw new Error(`HTTP error! status: ${res.status}`);

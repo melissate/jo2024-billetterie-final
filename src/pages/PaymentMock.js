@@ -30,8 +30,8 @@ const PaymentMock = () => {
       }
 
       try {
-        const response = await axios.post('https://jo2024-api.onrender.com',
-          { cartItems, totalPrice }, // Envoyer les articles du panier et le total
+        const response = await axios.post(`${API}/api/orders`, // <-- Assure-toi que '/api/orders' est la bonne route POST pour le paiement
+          { cartItems, totalPrice },
           {
             headers: {
               Authorization: `Bearer ${token}`

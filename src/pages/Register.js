@@ -33,11 +33,13 @@ const Register = () => {
         setIsLoading(true);
       
         try {
-          const response = await axios.post('https://jo2024-api.onrender.com', {
-            full_name: form.full_name,
-            email: form.email,
-            password: form.password
-          });
+            // AVANT: const response = await axios.post('${API}/api/register', {
+            // APRÈS:
+            const response = await axios.post(`${API}/api/register`, { // <-- Changer les ' en `
+              full_name: form.full_name,
+              email: form.email,
+              password: form.password
+            });
       
           setRegistrationMessage('✅ ' + (response.data.message || 'Compte créé avec succès !'));
           console.log(response.data);

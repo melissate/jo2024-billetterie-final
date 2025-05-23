@@ -39,7 +39,9 @@ const Login = () => {
     }
 
     try {
-      const response = await axios.post('${API}/api/login', { email, password });
+      // AVANT: const response = await axios.post('${API}/api/login', { email, password });
+      // APRÈS:
+      const response = await axios.post(`${API}/api/login`, { email, password }); // <-- Changer les ' en `
       
       // --- C'EST ICI LA MODIFICATION CRUCIALE ---
       localStorage.setItem('token', response.data.token);
