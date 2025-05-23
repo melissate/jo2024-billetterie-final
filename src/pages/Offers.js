@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'; // Assurez-vous que Link est bien impor
 
 import axios from 'axios';
 
-const API = process.env.REACT_APP_BACKEND_URL;
+const API = 'https://jo2024-api.onrender.com/api/offers ';
 
 
 
