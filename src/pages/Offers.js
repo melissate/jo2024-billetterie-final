@@ -1,9 +1,11 @@
-const API_URL = process.env.REACT_APP_BACKEND_URL || 'http://localhost:5000';
 
-// frontend/src/pages/Offers.js
 import React, { useEffect, useState } from 'react';
 import '../css/Offers.css';
 import { Link } from 'react-router-dom'; // Assurez-vous que Link est bien importé
+
+const BASE_URL = 'https://jo2024-api.onrender.com';
+
+
 
 const Offers = () => {
   const [offers, setOffers] = useState([]);
@@ -12,7 +14,7 @@ const Offers = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch('${API_URL}/api/offers')
+    fetch('${BASE_URL}/api/offers')
       .then(res => {
         if (!res.ok) {
           throw new Error(`HTTP error! status: ${res.status}`);

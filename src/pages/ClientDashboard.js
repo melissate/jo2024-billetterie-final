@@ -1,11 +1,12 @@
-const API_URL = process.env.REACT_APP_BACKEND_URL || 'http://localhost:5000';
-
-// frontend/src/pages/ClientDashboard.js
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { QRCodeCanvas } from 'qrcode.react';
 import '../css/ClientDashboard.css';
+
+const BASE_URL = 'https://jo2024-api.onrender.com';
+
+// frontend/src/pages/ClientDashboard.js
 
 const ClientDashboard = () => {
     const [user, setUser] = useState(null);
@@ -35,7 +36,7 @@ const ClientDashboard = () => {
                 });
 
                 // Récupérer les commandes de l'utilisateur
-                const ordersResponse = await axios.get('${API_URL}/api/user/orders', {
+                const ordersResponse = await axios.get('${BASE_URL}/api/user/orders', {
                     headers: {
                         Authorization: `Bearer ${token}`
                     }
