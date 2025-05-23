@@ -33,7 +33,7 @@ const Register = () => {
         setIsLoading(true);
       
         try {
-          const response = await axios.post('http://localhost:5000/api/register', {
+          const response = await axios.post('https://jo2024-api.onrender.com', {
             full_name: form.full_name,
             email: form.email,
             password: form.password
