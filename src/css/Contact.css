@@ -1,0 +1,201 @@
+.contact-page {
+  font-family: 'Segoe UI', sans-serif; /* Modern font */
+  background: #f8f8f8; /* Light background for the page */
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Header Section */
+.contact-header {
+  background: linear-gradient(to right, #002366, #005bbb); /* Blue gradient */
+  color: white;
+  padding: 4rem 1.5rem; /* More padding */
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* Subtle shadow */
+}
+
+.contact-header h1 {
+  font-size: 3rem; /* Larger title */
+  margin-bottom: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.contact-header p {
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+/* Main Content Wrapper (for two-column layout) */
+.contact-content-wrapper {
+  display: flex;
+  flex-direction: column; /* Stacked on small screens */
+  max-width: 1200px; /* Max width for content */
+  margin: 40px auto; /* Centered with vertical margin */
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1); /* Prominent shadow for the whole section */
+  overflow: hidden; /* Ensures rounded corners apply to children */
+}
+
+@media (min-width: 992px) { /* Two columns on larger screens */
+  .contact-content-wrapper {
+    flex-direction: row;
+    min-height: 550px; /* Ensure height for side-by-side */
+  }
+}
+
+/* Contact Information Section */
+.contact-infos {
+  background-color: #b91c1c; /* Red background */
+  color: white;
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center items vertically */
+  gap: 2rem; /* Space between info items */
+}
+
+@media (min-width: 992px) {
+  .contact-infos {
+    flex: 1; /* Take up equal space */
+    min-width: 350px; /* Minimum width for info section */
+    padding: 3rem;
+  }
+}
+
+.contact-infos .info-item {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* Space between icon and text */
+  background-color: #ffffff00 ;
+  border: none;
+
+}
+
+.info-item .info-icon {
+  font-size: 1.8rem; /* Larger icons */
+  color: #fff; /* White icon color */
+  flex-shrink: 0; /* Prevent icon from shrinking */
+}
+
+.info-item h3 {
+  font-size: 1.3rem;
+  margin: 0;
+  font-weight: 600;
+}
+
+.info-item p {
+  font-size: 1rem;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
+}
+
+/* Optional: Map Container */
+.map-container {
+  margin-top: 2rem;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* Contact Form Section */
+.contact-form-section {
+  padding: 2.5rem;
+  flex: 2; /* Take up more space than info section */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Vertically center content */
+}
+
+@media (min-width: 992px) {
+  .contact-form-section {
+    padding: 3rem;
+  }
+}
+
+.contact-form-section h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2.5rem;
+  color: #002366; /* Blue title */
+  font-weight: 700;
+}
+
+.contact-form-section form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem; /* Space between form fields */
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.contact-form-section input,
+.contact-form-section textarea {
+  padding: 14px 18px; /* More padding */
+  border: 1px solid #ddd; /* Lighter border */
+  border-radius: 8px; /* More rounded */
+  font-size: 1rem;
+  color: #333;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  box-sizing: border-box; /* Include padding in width */
+}
+
+.contact-form-section input::placeholder,
+.contact-form-section textarea::placeholder {
+  color: #aaa;
+}
+
+.contact-form-section input:focus,
+.contact-form-section textarea:focus {
+  outline: none;
+  border-color: #002366; /* Blue border on focus */
+  box-shadow: 0 0 0 3px rgba(0, 35, 102, 0.2); /* Subtle blue glow */
+}
+
+.contact-form-section textarea {
+  resize: vertical; /* Allow vertical resizing only */
+  min-height: 120px; /* Minimum height for textarea */
+}
+
+.submit-btn {
+  background-color: #e63946; /* Red submit button */
+  color: white;
+  border: none;
+  padding: 15px 25px; /* Larger button */
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  letter-spacing: 0.5px;
+  margin-top: 1rem; /* Space above button */
+}
+
+.submit-btn:hover {
+  background-color: #d12e3c; /* Darker red on hover */
+  transform: translateY(-2px); /* Slight lift */
+}
+
+
+.footer {
+  background-color: #b91c1c;
+  color: white;
+  padding: 0.5rem 1.5rem;
+  text-align: center;
+  font-size: 0.9rem;
+  margin-top: 40px;
+}

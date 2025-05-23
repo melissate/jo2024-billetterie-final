@@ -1,0 +1,476 @@
+/* General Page Styling */
+.register-page {
+  font-family: 'Segoe UI', sans-serif; /* Modern font */
+  background: #f0f2f5; /* Light grey background for the entire page */
+  color: #333;
+  line-height: 1.6;
+  min-height: 100vh; /* Ensure it takes full viewport height */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header Section */
+.register-header {
+  background: linear-gradient(to right, #002366, #005bbb); /* Blue gradient */
+  color: white;
+  text-align: center;
+  padding: 4rem 1.5rem; /* More padding */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.register-header h1 {
+  font-size: 2.8rem; /* Larger title */
+  margin-bottom: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.register-header p {
+  font-size: 1.15rem;
+  max-width: 700px;
+  margin: 0.5rem auto 0;
+  opacity: 0.9; /* Slightly transparent */
+}
+
+/* Main Content Wrapper (for two-column layout on desktop) */
+.register-content-wrapper {
+  flex-grow: 1; /* Allows it to take available space */
+  display: flex;
+  flex-direction: column; /* Stacked on small screens */
+  max-width: 1200px; /* Max width for content */
+  margin: 40px auto; /* Centered with vertical margin */
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15); /* More prominent shadow */
+  overflow: hidden;
+}
+
+@media (min-width: 992px) { /* Two columns on larger screens */
+  .register-content-wrapper {
+    flex-direction: row;
+    min-height: 600px; /* Ensure a good height */
+  }
+}
+
+/* Register Form Section */
+.register-form-section {
+  padding: 2.5rem;
+  flex: 2; /* Takes more space */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center content vertically */
+}
+
+@media (min-width: 992px) {
+  .register-form-section {
+    padding: 3rem;
+  }
+}
+
+.register-form-section h2 {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 2.5rem;
+  color: #002366; /* Blue title */
+  font-weight: 700;
+}
+
+.register-form {
+  max-width: 450px; /* Slightly wider form */
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem; /* Space between form fields */
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.input-with-icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-icon {
+  position: absolute;
+  left: 15px;
+  color: #a0a0a0; /* Grey icon color */
+  font-size: 1.1rem;
+}
+
+.register-form input {
+  padding: 14px 18px 14px 45px; /* More padding, extra left padding for icon */
+  border: 1px solid #ddd;
+  border-radius: 8px; /* More rounded */
+  font-size: 1rem;
+  color: #333;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.register-form input::placeholder {
+  color: #aaa;
+}
+
+.register-form input:focus {
+  outline: none;
+  border-color: #002366; /* Blue border on focus */
+  box-shadow: 0 0 0 3px rgba(0, 35, 102, 0.2); /* Subtle blue glow */
+}
+
+.input-error {
+  border-color: #e63946 !important; /* Red border for error */
+}
+
+.error-message {
+  color: #e63946; /* Red text for error */
+  font-size: 0.9rem;
+  margin-top: 5px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-weight: 500;
+}
+
+.error-icon {
+    font-size: 1rem;
+}
+
+.submit-btn {
+  background-color: #e63946; /* Red submit button */
+  color: white;
+  border: none;
+  padding: 15px 25px; /* Larger button */
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  letter-spacing: 0.5px;
+  margin-top: 1rem;
+}
+
+.submit-btn:hover {
+  background-color: #d12e3c; /* Darker red on hover */
+  transform: translateY(-2px); /* Slight lift */
+}
+
+.success-message {
+  color: #28a745; /* Green for success */
+  font-size: 1rem;
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  justify-content: center;
+}
+
+.success-icon {
+    font-size: 1.2rem;
+}
+
+
+.already-account {
+  margin-top: 1.5rem; /* More space */
+  font-size: 1rem;
+  color: #555;
+}
+
+.already-account a {
+  color: #002366; /* Blue link */
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+.already-account a:hover {
+  color: #005bbb; /* Lighter blue on hover */
+  text-decoration: underline;
+}
+
+/* Support Section */
+.register-support {
+  background-color: #002366; /* Dark blue background */
+  color: white;
+  padding: 2.5rem;
+  flex: 1; /* Takes equal space */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center content vertically */
+  align-items: center; /* Center content horizontally */
+  text-align: center;
+}
+
+@media (min-width: 992px) {
+  .register-support {
+    padding: 3rem;
+    min-width: 350px; /* Minimum width for support section */
+  }
+}
+
+.support-card {
+    background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent white */
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    max-width: 350px;
+    width: 100%;
+}
+
+.register-support h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: white;
+  font-weight: 600;
+}
+
+.register-support p {
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.support-contacts {
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.support-contacts p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+.support-icon {
+    font-size: 1.1rem;
+    color: #e63946; /* Red icons */
+}
+
+.register-support a {
+  color: white; /* White links */
+  text-decoration: none;
+  font-weight: bold;
+  transition: text-decoration 0.3s ease;
+}
+
+.register-support a:hover {
+  text-decoration: underline;
+}
+
+.btn-support {
+  background-color: #e63946; /* Red button */
+  color: white;
+  padding: 12px 25px;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-block; /* Allows padding and margin */
+  margin-top: 1.5rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-support:hover {
+  background-color: #d12e3c; /* Darker red on hover */
+  transform: translateY(-2px);
+}
+
+/* Footer (assuming it's a global component, otherwise add styles here) */
+.footer {
+  background-color: #b91c1c; /* Rouge foncé */
+  color: white;
+  padding: 0.5rem 1.5rem;
+  text-align: center;
+  font-size: 0.9rem;
+  margin-top: auto; /* Push footer to bottom */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .register-header h1 {
+    font-size: 2rem;
+  }
+  .register-header p {
+    font-size: 1rem;
+  }
+  .register-content-wrapper {
+    margin: 20px auto;
+  }
+  .register-form-section,
+  .register-support {
+    padding: 2rem;
+  }
+  .register-form-section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+  }
+  .submit-btn {
+    width: 100%; /* Full width button */
+    padding: 12px 20px;
+  }
+  .support-card {
+      padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .register-header h1 {
+    font-size: 1.5rem;
+  }
+  .register-form-section h2 {
+    font-size: 1.5rem;
+  }
+  .register-form input {
+    padding: 10px 15px 10px 40px; /* Adjust padding for smaller screens */
+  }
+  .input-icon {
+    left: 10px; /* Adjust icon position */
+  }
+}
+
+
+/* Message Styling */
+.form-message {
+  padding: 10px 15px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.success-message {
+  background-color: #d4edda; /* Light green */
+  color: #155724; /* Dark green */
+  border: 1px solid #c3e6cb;
+}
+
+.error-message {
+  background-color: #f8d7da; /* Light red */
+  color: #721c24; /* Dark red */
+  border: 1px solid #f5c6cb;
+}
+
+.message-icon {
+  font-size: 1.2rem;
+}
+
+/* Loader/Button Disabled State */
+.submit-btn:disabled {
+  background-color: #cccccc; /* Greyed out when disabled */
+  cursor: not-allowed;
+  transform: none; /* No hover/active effect */
+  box-shadow: none;
+}
+
+/* Support section icons */
+.support-card-icon {
+  font-size: 2.2rem; /* Plus grande que les autres icônes */
+  margin-bottom: 10px;
+  color: white; /* Ou une couleur qui contraste bien */
+}
+
+.support-icon {
+  font-size: 1.1rem;
+  margin-right: 5px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Mise en forme de la section support (similaire à Login.css) */
+.register-support {
+  background-color: #002366; /* Bleu foncé */
+  color: white;
+  padding: 2.5rem;
+  flex: 1; /* Prend l'espace */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.support-card {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  max-width: 350px;
+  width: 100%;
+}
+
+.register-support h3 {
+font-size: 1.5rem;
+margin-bottom: 1rem;
+color: white;
+font-weight: 600;
+display: flex; /* Pour aligner l'icône */
+align-items: center;
+gap: 10px;
+}
+
+.register-support p {
+font-size: 0.95rem;
+margin-bottom: 1rem;
+color: rgba(255, 255, 255, 0.9);
+}
+
+.support-contacts {
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.support-contacts p {
+  margin-bottom: 10px;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.support-contacts a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.support-contacts a:hover {
+  text-decoration: underline;
+}
+
+
+.btn-support { /* Renamed from .contact-button for consistency */
+background-color: #e63946; /* Red button */
+color: white;
+padding: 12px 25px;
+border-radius: 8px;
+font-weight: bold;
+text-decoration: none;
+display: inline-block; /* Allows padding and margin */
+margin-top: 1.5rem;
+transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-support:hover {
+background-color: #d12e3c; /* Darker red on hover */
+transform: translateY(-2px);
+}

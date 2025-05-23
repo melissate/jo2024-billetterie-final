@@ -1,0 +1,265 @@
+/* General styling for .home can remain */
+.home {
+  font-family: 'Arial', sans-serif;
+  overflow-x: hidden; /* Prevent horizontal scroll from any potential overflow */
+}
+
+/* Hero Section (commented out in JS, so CSS for it might not be needed if using shared Header) */
+/*
+.hero {
+  background: linear-gradient(to right, #002366, #005bbb);
+  color: white;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.btn-primary {
+  background-color: white;
+  color: #002366;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+}
+*/
+
+
+/* Section Offres - Readapted CSS */
+.offers-section-redesign {
+  background-color: #002366; /* Dark blue background from image */
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.offers-section-redesign h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.offers-section-redesign p {
+  font-size: 1.1rem;
+  margin-bottom: 40px; /* More space before cards */
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.offers-grid-redesign {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px; /* Increased gap */
+  margin-bottom: 40px; /* Space before buttons */
+}
+
+.offer-card-redesign {
+  background: none; /* No background for cards themselves, just text */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Subtle border for definition */
+  padding: 30px 20px;
+  border-radius: 12px;
+  width: 250px; /* Adjusted width */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.offer-card-redesign .offer-icon {
+  font-size: 3rem; /* Larger icon */
+  margin-bottom: 15px;
+}
+
+.offer-card-redesign h3 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+
+.offer-card-redesign p {
+  font-size: 0.95rem;
+  margin-bottom: 0; /* Remove default paragraph margin */
+}
+
+.offers-actions {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.btn-offers {
+  background-color: white;
+  color: #002366;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.btn-offers:hover {
+  background-color: #e0e0e0;
+}
+
+.btn-outline-offers {
+  background: none;
+  color: white;
+  border: 1px solid white;
+}
+
+.btn-outline-offers:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+
+/* Section Présentation des JO (now "Faits marquants...") - Readapted CSS */
+.facts-section {
+  display: flex;
+  flex-direction: column; /* Default to column for small screens */
+  align-items: center;
+  padding: 60px 20px;
+  background-color: #ffffff; /* White background */
+}
+
+@media (min-width: 900px) { /* Adjust breakpoint as needed */
+  .facts-section {
+    flex-direction: row; /* Row layout for larger screens */
+    justify-content: center;
+    gap: 60px; /* Space between image and text */
+    padding: 80px 40px;
+  }
+}
+
+.facts-image-container {
+  flex-shrink: 0; /* Don't allow image to shrink */
+  max-width: 500px; /* Limit image width */
+  margin-bottom: 40px; /* Space below image on small screens */
+}
+
+@media (min-width: 900px) {
+  .facts-image-container {
+    margin-bottom: 0; /* Remove margin on larger screens */
+  }
+}
+
+.facts-image {
+  width: 100%;
+  height: auto;
+  border-radius: 12px; /* Soften edges */
+  object-fit: cover;
+}
+
+.facts-content {
+  max-width: 550px; /* Limit content width */
+  text-align: center; /* Center content on small screens */
+}
+
+@media (min-width: 900px) {
+  .facts-content {
+    text-align: left; /* Align text left on larger screens */
+  }
+}
+
+.facts-content .subtitle {
+  display: block;
+  font-size: 0.9rem;
+  color: #666; /* Grey for subtitle */
+  margin-bottom: 5px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.facts-content h2 {
+  font-size: 2.2rem;
+  margin-bottom: 15px;
+  line-height: 1.2;
+}
+
+.facts-content p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.stats-grid-redesign {
+  display: flex;
+  justify-content: center; /* Center for small screens */
+  gap: 60px; /* Space between stats */
+  margin-bottom: 30px;
+  flex-wrap: wrap; /* Allow stats to wrap */
+}
+
+@media (min-width: 900px) {
+  .stats-grid-redesign {
+    justify-content: flex-start; /* Align stats left on larger screens */
+  }
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-item .stat-number {
+  font-size: 3rem; /* Larger number */
+  font-weight: bold;
+  color: #002366; /* Blue color for numbers */
+  margin-bottom: 5px;
+}
+
+.stat-item .stat-description {
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.4;
+}
+
+.facts-actions {
+  display: flex;
+  justify-content: center; /* Center buttons on small screens */
+  gap: 15px;
+}
+
+@media (min-width: 900px) {
+  .facts-actions {
+    justify-content: flex-start; /* Align buttons left on larger screens */
+  }
+}
+
+.btn-facts-outline {
+  background: none;
+  color: #002366;
+  border: 1px solid #002366;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+}
+
+.btn-facts-outline:hover {
+  background-color: #002366;
+  color: white;
+}
+
+
+/* Footer - Keep as is */
+.footer {
+  background-color: #b91c1c; /* rouge foncé */
+  color: white;
+  padding: 0.5rem 1.5rem;
+  text-align: center;
+  font-size: 0.9rem;
+}

@@ -1,0 +1,378 @@
+/* frontend/src/css/Cart.css */
+
+.cart-page {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+}
+
+.cart-header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.cart-header h1 {
+    color: #003366; /* Bleu foncé des JO */
+    margin-bottom: 10px;
+    font-size: 2.5em;
+}
+
+.cart-header p {
+    color: #555;
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+.cart-empty-message {
+    text-align: center;
+    padding: 50px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-top: 30px;
+}
+
+.cart-empty-message p {
+    font-size: 1.2em;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.btn-return-offers {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #007bff; /* Bleu standard */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    font-weight: bold;
+}
+
+.btn-return-offers:hover {
+    background-color: #0056b3;
+}
+
+.cart-content {
+    display: flex;
+    flex-wrap: wrap; /* Permet aux éléments de passer à la ligne */
+    gap: 30px;
+    margin-top: 30px;
+    align-items: flex-start; /* Aligner les blocs en haut */
+}
+
+.cart-items-list {
+    flex: 2; /* Prend plus de place sur les écrans larges */
+    min-width: 300px; /* Taille minimale pour ne pas être trop petit */
+}
+
+.cart-item-card {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    transition: transform 0.2s ease;
+}
+
+.cart-item-card:hover {
+    transform: translateY(-3px);
+}
+
+.cart-item-image {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-right: 20px;
+}
+
+.cart-item-details {
+    flex-grow: 1;
+}
+
+.cart-item-details h3 {
+    margin-top: 0;
+    margin-bottom: 5px;
+    color: #003366;
+    font-size: 1.4em;
+}
+
+.cart-item-description {
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 10px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Limite à 2 lignes */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.cart-item-price,
+.cart-item-subtotal {
+    font-weight: bold;
+    color: #333;
+    margin-top: 5px;
+}
+
+.cart-item-ticket-count {
+    font-size: 0.9em;
+    color: #777;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.cart-item-quantity-control {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    gap: 10px;
+}
+
+.quantity-btn,
+.remove-item-btn {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.quantity-btn {
+    background-color: #007bff;
+    color: white;
+}
+
+.quantity-btn:hover {
+    background-color: #0056b3;
+}
+
+.remove-item-btn {
+    background-color: #dc3545; /* Rouge pour supprimer */
+    color: white;
+    margin-left: auto; /* Aligne le bouton supprimer à droite */
+}
+
+.remove-item-btn:hover {
+    background-color: #c82333;
+}
+
+.cart-summary {
+    flex: 1; /* Prend l'espace restant */
+    min-width: 280px; /* Taille minimale pour le récapitulatif */
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    position: sticky; /* Reste en haut en scrollant */
+    top: 20px; /* Distance du haut de la fenêtre */
+}
+
+.cart-summary h2 {
+    color: #003366;
+    margin-top: 0;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.summary-line {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px dashed #eee;
+}
+
+.summary-line.total-price {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #003366;
+    border-top: 2px solid #003366;
+    padding-top: 10px;
+    margin-top: 15px;
+}
+
+.btn-checkout,
+.btn-clear-cart {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+    font-weight: bold;
+}
+
+.btn-checkout {
+    background-color: #28a745; /* Vert pour l'achat */
+    color: white;
+}
+
+.btn-checkout:hover {
+    background-color: #218838;
+}
+
+.btn-clear-cart {
+    background-color: #6c757d; /* Gris pour vider */
+    color: white;
+}
+
+.btn-clear-cart:hover {
+    background-color: #5a6268;
+}
+
+/* Footer (assuming it's a global component, otherwise add styles here) */
+.footer {
+    background-color: #b91c1c; /* Rouge foncé */
+    color: white;
+    padding: 0.5rem 1.5rem;
+    text-align: center;
+    font-size: 0.9rem;
+    margin-top: auto; /* Push footer to bottom */
+  }
+  
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .cart-content {
+        flex-direction: column;
+    }
+
+    .cart-items-list,
+    .cart-summary {
+        min-width: unset;
+        width: 100%;
+    }
+
+    .cart-summary {
+        position: static; /* Supprime le sticky sur les petits écrans */
+    }
+
+    .cart-item-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .cart-item-image {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+
+    .cart-item-quantity-control {
+        justify-content: center;
+    }
+
+    .remove-item-btn {
+        margin-left: 0;
+        margin-top: 10px;
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .cart-header h1 {
+        font-size: 2em;
+    }
+
+    .cart-header p {
+        font-size: 1em;
+    }
+
+    .cart-item-details h3 {
+        font-size: 1.2em;
+    }
+
+    .cart-item-price {
+        font-size: 0.9em;
+    }
+}
+
+
+/* Styles pour la notification de panier */
+.cart-notification {
+    position: fixed; /* Reste visible même en scrollant */
+    top: 20px; /* Distance du haut de la page */
+    left: 50%;
+    transform: translateX(-50%); /* Centre horizontalement */
+    padding: 15px 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    font-size: 1.1em;
+    font-weight: bold;
+    z-index: 1000; /* Assure qu'elle est au-dessus des autres éléments */
+    display: flex; /* Pour aligner le texte et le bouton */
+    align-items: center;
+    gap: 20px; /* Espace entre le message et le bouton */
+}
+
+.cart-notification.success {
+    background-color: #d4edda; /* Vert clair */
+    color: #155724; /* Vert foncé */
+    border: 1px solid #c3e6cb;
+}
+
+.cart-notification.error {
+    background-color: #f8d7da; /* Rouge clair */
+    color: #721c24; /* Rouge foncé */
+    border: 1px solid #f5c6cb;
+}
+
+.view-cart-btn {
+    background-color: #007bff; /* Bleu des liens */
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease;
+    white-space: nowrap; /* Empêche le texte de se casser sur plusieurs lignes */
+}
+
+.view-cart-btn:hover {
+    background-color: #0056b3;
+}
+
+.close-notification-btn {
+    background: none;
+    border: none;
+    color: #777; /* Couleur de la croix de fermeture */
+    font-size: 1.5em;
+    cursor: pointer;
+    margin-left: 10px; /* Espace à gauche de la croix */
+    transition: color 0.3s ease;
+}
+
+.close-notification-btn:hover {
+    color: #333;
+}
+
+/* Responsive adjustment for notification */
+@media (max-width: 600px) {
+    .cart-notification {
+        flex-direction: column; /* Les éléments s'empilent */
+        padding: 10px 20px;
+        text-align: center;
+        gap: 10px;
+    }
+    .view-cart-btn,
+    .close-notification-btn {
+        margin-left: 0;
+    }
+}

@@ -1,0 +1,121 @@
+// frontend/src/pages/PaymentMock.js
+import React, { useEffect, useState } from 'react';
+import { useNavigate, Link } from 'react-router-dom';
+import axios from 'axios';
+import '../css/PaymentMock.css';
+
+const PaymentMock = () => {
+  const navigate = useNavigate();
+  const [paymentStatus, setPaymentStatus] = useState('processing');
+  const [paymentMessage, setPaymentMessage] = useState('');
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    if (!token) {
+      navigate('/login', { state: { from: '/payment-mock', message: 'Veuillez vous connecter pour finaliser votre commande.' } });
+      return;
+    }
+
+    const processPayment = async () => {
+      const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+      const totalPrice = cartItems.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+
+      if (cartItems.length === 0) {
+        setPaymentStatus('error');
+        setPaymentMessage("Votre panier est vide. Veuillez ajouter des articles avant de procéder à l'achat.");
+        // Rediriger vers le panier si vide
+        setTimeout(() => navigate('/cart'), 2000);
+        return;
+      }
+
+      try {
+        const response = await axios.post('http://localhost:5000/api/payment',
+          { cartItems, totalPrice }, // Envoyer les articles du panier et le total
+          {
+            headers: {
+              Authorization: `Bearer ${token}`
+            }
+          }
+        );
+
+        if (response.data.success) {
+          setPaymentStatus('success');
+          setPaymentMessage(response.data.message || 'Paiement simulé réussi ! Votre commande a été confirmée.');
+          localStorage.removeItem('cart'); // Vider le panier après succès
+          window.dispatchEvent(new Event('storage')); // Déclenche un événement de stockage
+
+          // --- MODIFICATION ICI : Redirection vers le tableau de bord client après succès ---
+          // On passe l'ID de la commande ou le QR code si on veut l'afficher directement
+          navigate('/dashboard', { state: { orderId: response.data.orderId, qrCodeKey: response.data.qrCodeKey } });
+          // Vous pouvez aussi laisser le message pendant un court instant avant de rediriger:
+          // setTimeout(() => navigate('/dashboard', { state: { orderId: response.data.orderId, qrCodeKey: response.data.qrCodeKey } }), 2000);
+
+        } else {
+          setPaymentStatus('error');
+          setPaymentMessage(response.data.message || 'Paiement simulé échoué. Veuillez réessayer.');
+        }
+      } catch (err) {
+        setError(err);
+        setPaymentStatus('error');
+        if (err.response && err.response.status === 401) {
+            setPaymentMessage('Votre session a expiré. Veuillez vous reconnecter.');
+            setTimeout(() => navigate('/login', { state: { from: '/payment-mock' } }), 2000);
+        } else if (err.response && err.response.data && err.response.data.message) {
+            setPaymentMessage(`Une erreur est survenue : ${err.response.data.message}`);
+        }
+        else {
+            setPaymentMessage('Une erreur est survenue lors du traitement du paiement.');
+        }
+        console.error('Erreur de paiement:', err);
+      }
+    };
+
+    processPayment();
+  }, [navigate]);
+
+  return (
+    <div className="payment-mock-page">
+      <header className="payment-mock-header">
+        <h1>Page de Paiement (Simulé)</h1>
+        <p>Veuillez patienter pendant le traitement de votre paiement.</p>
+      </header>
+
+      <section className="payment-status-section">
+        {paymentStatus === 'processing' && (
+          <div className="payment-processing">
+            <div className="spinner"></div>
+            <p>Traitement de votre paiement...</p>
+          </div>
+        )}
+
+        {/* Le message de succès n'est plus affiché longtemps car on redirige */}
+        {paymentStatus === 'success' && (
+          <div className="payment-success">
+            <h2>🎉 Succès !</h2>
+            <p>{paymentMessage}</p>
+            <p>Redirection vers votre tableau de bord...</p>
+          </div>
+        )}
+
+        {paymentStatus === 'error' && (
+          <div className="payment-error">
+            <h2>❌ Échec du paiement</h2>
+            <p>{paymentMessage}</p>
+            {error && error.response && error.response.data && (
+                <p>Détails : {error.response.data.message}</p>
+            )}
+            <button onClick={() => navigate('/cart')} className="btn-payment-retry">Retourner au panier</button>
+            <Link to="/offers" className="btn-payment-return">Retourner aux offres</Link>
+          </div>
+        )}
+      </section>
+
+      <footer className="footer">
+        <p>&copy; 2024 Jeux Olympiques France. Tous droits réservés.</p>
+      </footer>
+    </div>
+  );
+};
+
+export default PaymentMock;

@@ -1,0 +1,342 @@
+/* General Page Styling */
+.login-page {
+  font-family: 'Segoe UI', sans-serif; /* Modern font */
+  background: #f0f2f5; /* Light grey background for the entire page */
+  color: #333;
+  line-height: 1.6;
+  min-height: 100vh; /* Ensure it takes full viewport height */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header Section */
+.login-header {
+  background: linear-gradient(to right, #002366, #005bbb); /* Blue gradient */
+  color: white;
+  padding: 4rem 1.5rem; /* More padding */
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.login-header h1 {
+  font-size: 2.8rem; /* Larger title */
+  margin-bottom: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.login-header p {
+  font-size: 1.15rem;
+  max-width: 700px;
+  margin: 0.5rem auto 0;
+  opacity: 0.9;
+}
+
+/* Main Content Wrapper (for two-column layout on desktop) */
+.login-content-wrapper {
+  flex-grow: 1; /* Allows it to take available space */
+  display: flex;
+  flex-direction: column; /* Stacked on small screens */
+  max-width: 1200px; /* Max width for content */
+  margin: 40px auto; /* Centered with vertical margin */
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15); /* More prominent shadow */
+  overflow: hidden;
+}
+
+@media (min-width: 992px) { /* Two columns on larger screens */
+  .login-content-wrapper {
+    flex-direction: row;
+    min-height: 600px; /* Ensure a good height */
+  }
+}
+
+/* Login Form Section */
+.login-form-section {
+  padding: 2.5rem;
+  flex: 2; /* Takes more space */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center content vertically */
+  align-items: center; /* Center content horizontally */
+}
+
+@media (min-width: 992px) {
+  .login-form-section {
+    padding: 3rem;
+  }
+}
+
+.login-form {
+  background: #fff;
+  border: 1px solid #ddd; /* Lighter border */
+  border-radius: 12px; /* More rounded */
+  padding: 2.5rem; /* More padding */
+  width: 100%;
+  max-width: 450px; /* Slightly wider form */
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08); /* Softer shadow for form itself */
+  box-sizing: border-box; /* Ensures padding is included in width */
+}
+
+.login-form h2 {
+  font-size: 2.2rem; /* Larger title */
+  margin-bottom: 2rem;
+  color: #002366; /* Blue title */
+  font-weight: 700;
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 1.2rem; /* Space between form groups */
+}
+
+.form-group label {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 8px;
+  font-weight: 600;
+  display: block; /* Ensures label takes full width */
+}
+
+.input-with-icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-icon {
+  position: absolute;
+  left: 15px;
+  color: #a0a0a0; /* Grey icon color */
+  font-size: 1.1rem;
+}
+
+.login-form input {
+  width: 100%;
+  padding: 14px 18px 14px 45px; /* More padding, extra left padding for icon */
+  border: 1px solid #ddd;
+  border-radius: 8px; /* More rounded */
+  font-size: 1rem;
+  color: #333;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box;
+}
+
+.login-form input::placeholder {
+  color: #aaa;
+}
+
+.login-form input:focus {
+  outline: none;
+  border-color: #002366; /* Blue border on focus */
+  box-shadow: 0 0 0 3px rgba(0, 35, 102, 0.2); /* Subtle blue glow */
+}
+
+.forgot-password {
+  text-align: right;
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem; /* Space before button */
+}
+
+.forgot-password a {
+  color: #002366; /* Blue link */
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease, text-decoration 0.3s ease;
+  display: inline-flex; /* Align icon and text */
+  align-items: center;
+  gap: 5px;
+}
+
+.forgot-password a:hover {
+  color: #005bbb;
+  text-decoration: underline;
+}
+
+.forgot-password .link-icon {
+    font-size: 1rem;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 15px 25px; /* Larger button */
+  background-color: #e63946; /* Red button */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  letter-spacing: 0.5px;
+  display: flex; /* Align icon and text */
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.submit-btn:hover {
+  background-color: #d12e3c; /* Darker red on hover */
+  transform: translateY(-2px); /* Slight lift */
+}
+
+.submit-btn .button-icon {
+    font-size: 1.2rem;
+}
+
+
+.register-link-bottom { /* Renamed for clarity */
+  text-align: center;
+  margin-top: 1.5rem; /* Space above */
+  font-size: 1rem;
+  color: #555;
+}
+
+.register-link-bottom a {
+  color: #002366; /* Blue link */
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s ease, text-decoration 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.register-link-bottom a:hover {
+  color: #005bbb;
+  text-decoration: underline;
+}
+
+.register-link-bottom .link-icon {
+    font-size: 1rem;
+}
+
+
+/* Login Support Section */
+.login-support {
+  background-color: #002366; /* Dark blue background */
+  color: white;
+  padding: 2.5rem;
+  flex: 1; /* Takes equal space */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center content vertically */
+  align-items: center; /* Center content horizontally */
+  text-align: center;
+}
+
+@media (min-width: 992px) {
+  .login-support {
+    padding: 3rem;
+    min-width: 350px; /* Minimum width for support section */
+  }
+}
+
+.support-card {
+    background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent white */
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    max-width: 350px;
+    width: 100%;
+}
+
+.login-support h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: white;
+  font-weight: 600;
+}
+
+.login-support p {
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.support-contacts {
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.support-contacts p {
+    margin-bottom: 10px;
+    font-size: 1rem;
+    /* No icons here, as per your original structure, but you could add them */
+}
+
+
+.btn-support { /* Renamed from .contact-button for consistency */
+  background-color: #e63946; /* Red button */
+  color: white;
+  padding: 12px 25px;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-block; /* Allows padding and margin */
+  margin-top: 1.5rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-support:hover {
+  background-color: #d12e3c; /* Darker red on hover */
+  transform: translateY(-2px);
+}
+
+/* Footer (assuming it's a global component, otherwise add styles here) */
+.footer {
+  background-color: #b91c1c; /* Rouge foncé */
+  color: white;
+  padding: 0.5rem 1.5rem;
+  text-align: center;
+  font-size: 0.9rem;
+  margin-top: auto; /* Push footer to bottom */
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .login-header h1 {
+    font-size: 2rem;
+  }
+  .login-header p {
+    font-size: 1rem;
+  }
+  .login-content-wrapper {
+    margin: 20px auto;
+  }
+  .login-form-section,
+  .login-support {
+    padding: 2rem;
+  }
+  .login-form h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+  }
+  .submit-btn {
+    width: 100%; /* Full width button */
+    padding: 12px 20px;
+  }
+  .support-card {
+      padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-header h1 {
+    font-size: 1.5rem;
+  }
+  .login-form h2 {
+    font-size: 1.5rem;
+  }
+  .login-form input {
+    padding: 10px 15px 10px 40px; /* Adjust padding for smaller screens */
+  }
+  .input-icon {
+    left: 10px; /* Adjust icon position */
+  }
+}

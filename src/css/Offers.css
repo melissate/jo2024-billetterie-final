@@ -1,0 +1,244 @@
+.offers-page {
+  font-family: 'Segoe UI', sans-serif; /* A slightly more modern font */
+  background-color: #f8f8f8; /* Lighter background for the page */
+  color: #333;
+}
+
+.offers-header {
+  background-color: #002366; /* Match your primary blue */
+  color: white;
+  padding: 4rem 1.5rem; /* More vertical padding */
+  text-align: center;
+}
+
+.offers-header h1 {
+  font-size: 3rem; /* Larger title */
+  margin-bottom: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.offers-header p {
+  font-size: 1.2rem; /* Slightly larger paragraph */
+  max-width: 700px; /* Wider paragraph */
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.offers-container {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem; /* Increased gap between cards */
+  padding: 4rem 1.5rem; /* More padding */
+  flex-wrap: wrap;
+  background: #f8f8f8; /* Consistent background */
+}
+
+.offer-card {
+  background: white;
+  border-radius: 16px; /* More rounded corners */
+  padding: 2.5rem 2rem; /* Increased padding */
+  width: 280px; /* Slightly wider cards */
+  max-width: 100%; /* Ensure it fits on small screens */
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1); /* Softer, larger shadow */
+  border: 3px solid transparent;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, border-color 0.3s ease-in-out; /* Smooth transitions */
+  position: relative; /* For the highlight tag */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.offer-card:hover {
+  transform: translateY(-10px); /* Lift card on hover */
+  box-shadow: 0 12px 25px rgba(0,0,0,0.15); /* More pronounced shadow on hover */
+}
+
+.highlight {
+  border-color: #e63946 !important; /* Prominent red border for highlight */
+  box-shadow: 0 8px 25px rgba(230, 57, 70, 0.3); /* Red shadow for highlight */
+}
+
+.highlight .btn-reserver {
+  background-color: #e63946; /* Red button for highlight */
+  color: white;
+}
+
+.highlight .btn-reserver:hover {
+  background-color: #d12e3c; /* Darker red on hover */
+}
+
+.highlight-tag {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background-color: #e63946; /* Red tag */
+  color: white;
+  padding: 5px 12px;
+  border-radius: 20px; /* Pill shape */
+  font-size: 0.85rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+
+.offer-icon-wrapper {
+  background-color: #f0f0f0; /* Light grey circle behind icon */
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px; /* Space below icon */
+}
+
+.offer-card-icon {
+  font-size: 3rem; /* Larger icon size */
+}
+
+.offer-card h2 {
+  font-size: 1.7rem; /* Larger title */
+  margin-bottom: 0.75rem;
+  color: #002366; /* Blue title */
+  font-weight: 600;
+}
+
+.offer-details {
+  font-size: 1.1rem; /* Clearer ticket count */
+  color: #555;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.offer-description {
+  margin-bottom: 2rem; /* More space before button */
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #666;
+  flex-grow: 1; /* Allows description to take available space */
+}
+
+.offer-card .btn-reserver {
+  background-color: #002366; /* Primary blue button */
+  color: white;
+  border: none;
+  padding: 0.9rem 2rem; /* Larger button */
+  border-radius: 8px; /* More rounded button */
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+  width: 100%; /* Full width button */
+  max-width: 220px; /* Max width for button */
+}
+
+.offer-card .btn-reserver:hover {
+  background-color: #001f4d; /* Darker blue on hover */
+}
+
+/* Offers Footer Section */
+.offers-footer-section { /* Renamed for clarity */
+  background: linear-gradient(to right, #e60023, #002366); /* Red to Blue gradient */
+  color: white;
+  text-align: center;
+  padding: 4rem 1.5rem; /* More padding */
+}
+
+.offers-footer-section h2 {
+  font-size: 2.5rem; /* Larger title */
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.offers-footer-section p {
+  font-size: 1.15rem;
+  max-width: 800px;
+  margin: 0 auto 2.5rem; /* Space below paragraph before features */
+  line-height: 1.6;
+}
+
+.features-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px; /* Space between feature items */
+    margin-top: 2rem;
+}
+
+.feature-item {
+    background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent white background */
+    padding: 20px;
+    border-radius: 10px;
+    width: 280px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.feature-item:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Slightly more opaque on hover */
+}
+
+.feature-item h3 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.feature-item p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin: 0; /* Remove default paragraph margin */
+}
+
+/* Footer - Keep as is */
+.offers-page .footer {
+  background-color: #b91c1c; /* rouge foncé */
+  color: white;
+  padding: 0.5rem 1.5rem;
+  text-align: center;
+  font-size: 0.9rem;
+  margin-top: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .offers-header h1 {
+    font-size: 2.2rem;
+  }
+  .offers-header p {
+    font-size: 1rem;
+  }
+  .offers-container {
+    padding: 2rem 1rem;
+  }
+  .offer-card {
+    width: 90%; /* Take more width on smaller screens */
+    padding: 1.5rem;
+  }
+  .offers-footer-section h2 {
+    font-size: 2rem;
+  }
+  .features-grid {
+      flex-direction: column; /* Stack features vertically */
+      align-items: center;
+  }
+  .feature-item {
+      width: 90%; /* Take more width on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .offers-header h1 {
+    font-size: 1.8rem;
+  }
+  .offer-card h2 {
+    font-size: 1.5rem;
+  }
+  .offer-card .btn-reserver {
+    font-size: 0.9rem;
+    padding: 0.75rem 1.2rem;
+  }
+}

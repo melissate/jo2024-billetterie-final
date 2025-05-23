@@ -1,0 +1,203 @@
+/* frontend/src/css/ClientDashboard.css */
+
+.client-dashboard {
+  padding: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+  font-family: 'Arial', sans-serif;
+  color: #333;
+}
+
+.client-header {
+  text-align: center;
+  margin-bottom: 40px;
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.client-header h1 {
+  color: #003366; /* Bleu foncé des JO */
+  margin-bottom: 10px;
+  font-size: 2.5em;
+}
+
+.card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 25px;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.card h3 {
+  color: #003366;
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 1.6em;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 10px;
+}
+
+.card p {
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.card ul li {
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+  color: #555;
+  cursor: pointer; /* Indique qu'ils sont interactifs */
+  transition: color 0.2s ease;
+}
+
+.card ul li:last-child {
+  border-bottom: none;
+}
+
+.card ul li:hover {
+  color: #007bff;
+}
+
+.btn-edit,
+.btn-show {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  margin-top: 15px;
+}
+
+.btn-edit {
+  background-color: #007bff;
+  color: white;
+}
+
+.btn-edit:hover {
+  background-color: #0056b3;
+}
+
+/* Purchase Info Styles */
+.purchase-info {
+  display: flex;
+  align-items: flex-start; /* Align top if content heights differ */
+  gap: 25px;
+  padding: 15px 0;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 15px;
+}
+
+.purchase-info:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.qr-code-display {
+  flex-shrink: 0; /* Prevents QR code from shrinking */
+  text-align: center;
+}
+
+.qr-code-label {
+  font-size: 0.8em;
+  color: #777;
+  margin-top: 5px;
+  word-break: break-all; /* Break long QR code keys */
+}
+
+.order-details {
+  flex-grow: 1; /* Allows details to take up available space */
+  text-align: left;
+}
+
+.order-details p {
+  margin-bottom: 5px;
+  font-size: 0.95em;
+}
+
+.order-details h4 {
+  margin-top: 15px;
+  margin-bottom: 5px;
+  color: #003366;
+  font-size: 1.1em;
+}
+
+.order-items-list {
+  list-style: disc; /* Use bullets for items */
+  margin-left: 20px;
+  font-size: 0.9em;
+  color: #666;
+}
+
+.order-items-list li {
+  padding: 2px 0;
+  border-bottom: none; /* No border for individual items */
+}
+
+
+.client-footer {
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+  border-top: 1px solid #eee;
+  color: #777;
+  font-size: 0.9em;
+}
+
+.client-footer ul {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+}
+
+.client-footer ul li {
+  padding: 0; /* Override potential card ul li padding */
+  border-bottom: none;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.client-footer ul li:hover {
+  color: #007bff;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .client-header h1 {
+      font-size: 2em;
+  }
+
+  .card {
+      padding: 20px;
+  }
+
+  .purchase-info {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+  }
+
+  .order-details {
+      text-align: center; /* Center details on smaller screens */
+  }
+
+  .qr-code-display {
+    margin-bottom: 15px; /* Space between QR and details */
+  }
+
+  .order-items-list {
+      margin-left: 0;
+      text-align: left; /* Keep bullet list left-aligned */
+  }
+}

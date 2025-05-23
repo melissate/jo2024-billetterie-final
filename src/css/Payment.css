@@ -1,0 +1,59 @@
+.payment-page {
+    font-family: 'Arial', sans-serif;
+    color: #000;
+  }
+  
+  .payment-header {
+    background-color: #002366;
+    color: white;
+    padding: 3rem 1rem;
+    text-align: center;
+  }
+  
+  .payment-content {
+    padding: 2rem;
+  }
+  
+  .payment-methods, .how-it-works, .payment-support {
+    margin-bottom: 2rem;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 1.5rem;
+  }
+  
+  .payment-methods img {
+    max-width: 180px;
+    margin-bottom: 0.5rem;
+  }
+  
+  .how-it-works ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  .payment-support {
+    background-color: #fef2f2;
+    border-color: #dc2626;
+  }
+  
+  .payment-support h2 {
+    color: #dc2626;
+  }
+  
+  .btn-red {
+    background-color: #dc2626;
+    color: white;
+    border: none;
+    padding: 0.6rem 1rem;
+    margin-top: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .footer {
+    text-align: center;
+    background: #b91c1c;
+    color: white;
+    padding: 1rem;
+  }
+  
