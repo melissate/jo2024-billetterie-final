@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation, Link } from 'react-router-dom';
 import axios from 'axios';
 import '../css/Auth.css';
-const BASE_URL = 'https://jo2024-api.onrender.com';
+const API = process.env.REACT_APP_BACKEND_URL;
 
 // frontend/src/pages/Login.js
 
@@ -39,7 +39,7 @@ const Login = () => {
     }
 
     try {
-      const response = await axios.post('${BASE_URL}/api/login', { email, password });
+      const response = await axios.post('${API}/api/login', { email, password });
       
       // --- C'EST ICI LA MODIFICATION CRUCIALE ---
       localStorage.setItem('token', response.data.token);

@@ -4,7 +4,7 @@ import axios from 'axios';
 import { QRCodeCanvas } from 'qrcode.react';
 import '../css/ClientDashboard.css';
 
-const BASE_URL = 'https://jo2024-api.onrender.com';
+const API = process.env.REACT_APP_BACKEND_URL;
 
 // frontend/src/pages/ClientDashboard.js
 
@@ -36,7 +36,7 @@ const ClientDashboard = () => {
                 });
 
                 // Récupérer les commandes de l'utilisateur
-                const ordersResponse = await axios.get('${BASE_URL}/api/user/orders', {
+                const ordersResponse = await axios.get('${API}/api/user/orders', {
                     headers: {
                         Authorization: `Bearer ${token}`
                     }

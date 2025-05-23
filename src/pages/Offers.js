@@ -3,7 +3,9 @@ import React, { useEffect, useState } from 'react';
 import '../css/Offers.css';
 import { Link } from 'react-router-dom'; // Assurez-vous que Link est bien importé
 
-const BASE_URL = 'https://jo2024-api.onrender.com';
+import axios from 'axios';
+
+const API = process.env.REACT_APP_BACKEND_URL;
 
 
 
@@ -14,7 +16,7 @@ const Offers = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch('${BASE_URL}/api/offers')
+    fetch('${API}/api/offers')
       .then(res => {
         if (!res.ok) {
           throw new Error(`HTTP error! status: ${res.status}`);
