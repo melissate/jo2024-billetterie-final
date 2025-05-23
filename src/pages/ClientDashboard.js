@@ -4,6 +4,8 @@ import axios from 'axios';
 import { QRCodeCanvas } from 'qrcode.react';
 import '../css/ClientDashboard.css';
 
+// AJOUTE CETTE LIGNE ICI :
+const API = process.env.REACT_APP_BACKEND_URL;
 
 // frontend/src/pages/ClientDashboard.js
 
@@ -35,7 +37,8 @@ const ClientDashboard = () => {
                 });
 
                 // Récupérer les commandes de l'utilisateur
-                const ordersResponse = await axios.get('${API}/api/user/orders', {
+                // Appel à l'API pour les commandes de l'utilisateur
+                const ordersResponse = await axios.get(`${API}/api/user/orders`, {
                     headers: {
                         Authorization: `Bearer ${token}`
                     }
