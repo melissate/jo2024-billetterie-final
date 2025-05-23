@@ -40,9 +40,10 @@ const ClientDashboard = () => {
                 // Appel à l'API pour les commandes de l'utilisateur
                 const ordersResponse = await axios.get(`${API}/api/user/orders`, {
                     headers: {
-                        Authorization: `Bearer ${token}`
+                      Authorization: `Bearer ${token}`
                     }
-                });
+                  });
+                  
                 setOrders(ordersResponse.data);
 
             } catch (err) {
