@@ -4,7 +4,6 @@ import { useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
 import '../css/PaymentMock.css';
 
-// AJOUTE CETTE LIGNE ICI :
 const API = process.env.REACT_APP_BACKEND_URL;
 
 const PaymentMock = () => {
@@ -27,13 +26,12 @@ const PaymentMock = () => {
       if (cartItems.length === 0) {
         setPaymentStatus('error');
         setPaymentMessage("Votre panier est vide. Veuillez ajouter des articles avant de procéder à l'achat.");
-        // Rediriger vers le panier si vide
         setTimeout(() => navigate('/cart'), 2000);
         return;
       }
 
       try {
-        const response = await axios.post(`${API}/api/orders`, // <-- Assure-toi que '/api/orders' est la bonne route POST pour le paiement
+        const response = await axios.post(`${API}/api/orders`,
           { cartItems, totalPrice },
           {
             headers: {
@@ -45,14 +43,10 @@ const PaymentMock = () => {
         if (response.data.success) {
           setPaymentStatus('success');
           setPaymentMessage(response.data.message || 'Paiement simulé réussi ! Votre commande a été confirmée.');
-          localStorage.removeItem('cart'); // Vider le panier après succès
-          window.dispatchEvent(new Event('storage')); // Déclenche un événement de stockage
+          localStorage.removeItem('cart');
+          window.dispatchEvent(new Event('storage'));
 
-          // --- MODIFICATION ICI : Redirection vers le tableau de bord client après succès ---
-          // On passe l'ID de la commande ou le QR code si on veut l'afficher directement
           navigate('/dashboard', { state: { orderId: response.data.orderId, qrCodeKey: response.data.qrCodeKey } });
-          // Vous pouvez aussi laisser le message pendant un court instant avant de rediriger:
-          // setTimeout(() => navigate('/dashboard', { state: { orderId: response.data.orderId, qrCodeKey: response.data.qrCodeKey } }), 2000);
 
         } else {
           setPaymentStatus('error');
@@ -92,7 +86,6 @@ const PaymentMock = () => {
           </div>
         )}
 
-        {/* Le message de succès n'est plus affiché longtemps car on redirige */}
         {paymentStatus === 'success' && (
           <div className="payment-success">
             <h2>🎉 Succès !</h2>

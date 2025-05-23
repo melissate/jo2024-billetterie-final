@@ -114,7 +114,7 @@ const Header = () => {
                 </li>
               ) : (
                 <li>
-                  <Link to="/dashboard" className="btn-nav" onClick={() => setIsNavOpen(false)}>
+                  <Link to="/clientDashboard" className="btn-nav" onClick={() => setIsNavOpen(false)}>
                     Salut, {user.full_name ? user.full_name.split(' ')[0] : user.email} ! (Mon Espace)
                   </Link>
                 </li>
