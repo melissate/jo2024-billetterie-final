@@ -4,7 +4,6 @@ import axios from 'axios';
 import { QRCodeCanvas } from 'qrcode.react';
 import '../css/ClientDashboard.css';
 
-const API = process.env.REACT_APP_BACKEND_URL;
 
 // frontend/src/pages/ClientDashboard.js
 

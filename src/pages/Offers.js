@@ -8,6 +8,8 @@ import axios from 'axios';
 //    Elle doit correspondre exactement à ce que tu as mis dans Netlify pour REACT_APP_BACKEND_URL
 const API = process.env.REACT_APP_BACKEND_URL; // Ex: 'https://jo2024-api.onrender.com'
 
+// Et pour appeler les offres:
+const response = await axios.get(`${API}/api/offers`); // <-- C'EST ICI LE PROBLÈME
 
 const Offers = () => {
   const [offers, setOffers] = useState([]);
@@ -16,30 +18,24 @@ const Offers = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    // AVANT: fetch('${API}/api/offers')
-    // APRÈS:
-    fetch(`${API}/api/offers`)
-      .then(res => {
-        if (!res.ok) {
-          throw new Error(`HTTP error! status: ${res.status}`);
-        }
-        return res.json();
-      })
-      .then(data => {
-        const adaptedOffers = data.map(offer => ({
-            ...offer,
-            name: offer.title
+    const fetchOffers = async () => {
+      try {
+        const response = await axios.get(`${API}/api/offers`);
+        const adaptedOffers = response.data.map(offer => ({
+          ...offer,
+          name: offer.title
         }));
         setOffers(adaptedOffers);
         setLoading(false);
-      })
-      .catch(err => {
+      } catch (err) {
         console.error("Error fetching offers:", err);
         setError("Erreur lors du chargement des offres. Veuillez réessayer plus tard.");
         setLoading(false);
-      });
-  }, []);
+      }
+    };
 
+    fetchOffers();
+  }, []);
   // Fonction pour ajouter un article au panier
   const addToCart = (offer) => {
     if (typeof offer.price !== 'number' || isNaN(offer.price)) {

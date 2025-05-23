@@ -2,8 +2,6 @@ import React, { useState, useEffect } from 'react';
 import '../css/Cart.css';
 import { Link, useNavigate } from 'react-router-dom'; // Importez useNavigate
 
-import axios from 'axios';
-const API = process.env.REACT_APP_BACKEND_URL;
 
 
 const Cart = () => {
