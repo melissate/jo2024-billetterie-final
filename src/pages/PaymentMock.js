@@ -4,6 +4,9 @@ import { useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
 import '../css/PaymentMock.css';
 
+// AJOUTE CETTE LIGNE ICI :
+const API = process.env.REACT_APP_BACKEND_URL;
+
 const PaymentMock = () => {
   const navigate = useNavigate();
   const [paymentStatus, setPaymentStatus] = useState('processing');

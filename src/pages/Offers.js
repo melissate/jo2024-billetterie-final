@@ -5,8 +5,8 @@ import { Link } from 'react-router-dom'; // Assurez-vous que Link est bien impor
 
 import axios from 'axios';
 
-const API = 'https://jo2024-api.onrender.com/api/offers ';
-
+//    Elle doit correspondre exactement à ce que tu as mis dans Netlify pour REACT_APP_BACKEND_URL
+const API = process.env.REACT_APP_BACKEND_URL; // Ex: 'https://jo2024-api.onrender.com'
 
 
 const Offers = () => {

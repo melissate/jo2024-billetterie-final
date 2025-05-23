@@ -6,6 +6,9 @@ import axios from 'axios';
 import '../css/Register.css'; // Assurez-vous que ce fichier CSS existe et est correct
 import { FaUser, FaEnvelope, FaLock, FaCheckCircle, FaExclamationCircle, FaPhone, FaShieldAlt } from 'react-icons/fa';
 
+// AJOUTE CETTE LIGNE ICI :
+const API = process.env.REACT_APP_BACKEND_URL;
+
 const Register = () => {
     const [form, setForm] = useState({
         full_name: '',
