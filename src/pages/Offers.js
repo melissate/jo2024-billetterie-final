@@ -1,3 +1,5 @@
+const API_URL = process.env.REACT_APP_BACKEND_URL || 'http://localhost:5000';
+
 // frontend/src/pages/Offers.js
 import React, { useEffect, useState } from 'react';
 import '../css/Offers.css';
@@ -10,7 +12,7 @@ const Offers = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch('http://localhost:5000/api/offers')
+    fetch('${API_URL}/api/offers')
       .then(res => {
         if (!res.ok) {
           throw new Error(`HTTP error! status: ${res.status}`);

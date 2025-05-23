@@ -1,3 +1,4 @@
+const API_URL = process.env.REACT_APP_BACKEND_URL || 'http://localhost:5000';
 // frontend/src/pages/AdminDashboard.js
 import React, { useEffect, useState } from 'react';
 import '../css/AdminDashboard.css';
@@ -34,7 +35,7 @@ const AdminDashboard = () => {
 
     const fetchSalesData = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/admin/sales-report', {
+        const response = await axios.get('${API_URL}/api/admin/sales-report', {
           headers: {
             Authorization: `Bearer ${token}`
           }

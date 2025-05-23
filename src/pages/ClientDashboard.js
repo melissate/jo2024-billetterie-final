@@ -1,3 +1,5 @@
+const API_URL = process.env.REACT_APP_BACKEND_URL || 'http://localhost:5000';
+
 // frontend/src/pages/ClientDashboard.js
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -33,7 +35,7 @@ const ClientDashboard = () => {
                 });
 
                 // Récupérer les commandes de l'utilisateur
-                const ordersResponse = await axios.get('http://localhost:5000/api/user/orders', {
+                const ordersResponse = await axios.get('${API_URL}/api/user/orders', {
                     headers: {
                         Authorization: `Bearer ${token}`
                     }

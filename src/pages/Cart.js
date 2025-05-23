@@ -1,4 +1,6 @@
+const API_URL = process.env.REACT_APP_BACKEND_URL || 'http://localhost:5000';
 // frontend/src/pages/Cart.js
+
 import React, { useState, useEffect } from 'react';
 import '../css/Cart.css';
 import { Link, useNavigate } from 'react-router-dom'; // Importez useNavigate
